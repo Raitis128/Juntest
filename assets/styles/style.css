@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.footer-text {
+  font-size: 20px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.product_form {
+  margin-left: 50px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+.product_form fieldset {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.product_form span {
+  padding-top: 20px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+}
+.inputs label {
+  margin-right: 35px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.furniture_options {
+  flex-direction: column;
+}
+
+#DVD,
+#Furniture,
+#Book {
+  display: none;
+}
+
+.main_cards {
+  margin-bottom: 50px;
+}
+
+form .btns {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}/*# sourceMappingURL=style.css.map */

@@ -33,21 +33,21 @@ function requiredInputs(selectElement) {
       document.getElementById("size").required = true;
       document.getElementById("width").required = false;
       document.getElementById("height").required = false;
-      document.getElementById("lenght").required = false;
+      document.getElementById("length").required = false;
       document.getElementById("weight").required = false;
       break;
     case "Furniture":
       document.getElementById("size").required = false;
       document.getElementById("width").required = true;
       document.getElementById("height").required = true;
-      document.getElementById("lenght").required = true;
+      document.getElementById("length").required = true;
       document.getElementById("weight").required = false;
       break;
     case "Book":
       document.getElementById("size").required = false;
       document.getElementById("width").required = false;
       document.getElementById("height").required = false;
-      document.getElementById("lenght").required = false;
+      document.getElementById("length").required = false;
       document.getElementById("weight").required = true;
       break;
     default:

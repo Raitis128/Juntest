@@ -19,18 +19,6 @@ class Book extends Product
         return $this->weight;
     }
 
-    public function insertData($sku, $name, $price, $size) {
-        try {
-            $stm = $this->conn->prepare("INSERT INTO product(product_sku, product_name, product_price, product_weight)
-            values(?,?,?,?)");
-            $stm->execute([$sku, $name, $price, $size]);
-
-        }
-        catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-
     public function fetchAll() {
         try {
             $stm = $this->conn->prepare("SELECT * FROM product");
@@ -75,6 +63,6 @@ class Book extends Product
         $this->setPrice($_POST['price']);
         $this->setWeight($_POST['weight']);
 
-        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), $this->getWeight());
+        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), null, null, null, null, $this->getWeight());
     }
 }

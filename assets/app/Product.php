@@ -56,5 +56,16 @@ abstract class Product
         return $this->price;
     }
 
+    public function insertData($sku, $name, $price, $height, $width, $lenght, $weight, $size) {
+        try {
+            $stm = $this->conn->prepare("INSERT INTO product(product_sku, product_name, product_price, product_height, product_width, product_lenght, product_size, product_weight)
+            values(?,?,?,?,?,?,?,?)");
+            $stm->execute([$sku, $name, $price, $height, $width, $lenght, $weight, $size]);
+        }
+        catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
     abstract function addProcess();
 }

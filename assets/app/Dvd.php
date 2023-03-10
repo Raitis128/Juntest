@@ -16,17 +16,6 @@ class Dvd extends Product {
         return $this->size;
     }
 
-    public function insertData($sku, $name, $price, $weight) {
-        try {
-            $stm = $this->conn->prepare("INSERT INTO product(product_sku, product_name, product_price, product_size)
-            values(?,?,?,?)");
-            $stm->execute([$sku, $name, $price, $weight]);
-        }
-        catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-
     public function addProcess() {
 
         $this->setSku($_POST['sku']);
@@ -34,7 +23,7 @@ class Dvd extends Product {
         $this->setPrice($_POST['price']);
         $this->setSize($_POST['size']);
 
-        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), $this->getSize());
+        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), null, null, null, $this->getSize(), null);
     }
 
 }

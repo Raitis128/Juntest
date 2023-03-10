@@ -34,17 +34,6 @@ class Furniture extends Product {
         return $this->lenght;
     }
 
-    public function insertData($sku, $name, $price, $height, $width, $lenght) {
-        try {
-            $stm = $this->conn->prepare("INSERT INTO product(product_sku, product_name, product_price, product_height, product_width, product_lenght)
-            values(?,?,?,?,?,?)");
-            $stm->execute([$sku, $name, $price, $height, $width, $lenght]);
-        }
-        catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-
     public function addProcess() {
 
         $this->setSku($_POST['sku']);
@@ -54,7 +43,7 @@ class Furniture extends Product {
         $this->setWidth($_POST['width']);
         $this->setLenght($_POST['lenght']);
 
-        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), $this->getHeight(), $this->getWidth(), $this->getLenght());
+        $this->insertData($this->getSku(), $this->getName(), $this->getPrice(), $this->getHeight(), $this->getWidth(), $this->getLenght(), null, null);
     }
 
 }
